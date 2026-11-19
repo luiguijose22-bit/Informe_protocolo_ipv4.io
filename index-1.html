@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Técnico - Protocolo IPv4</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- PÁGINA 1: PORTADA CON ESTRUCTURA EXACTA -->
+    <div class="pagina">
+        <div class="portada">
+            
+            <!-- Encabezado Superior -->
+            <div class="encabezado-superior">
+                <div class="encabezado-flex">
+                    <div class="logo-box">
+                        <!-- Reemplaza "logo-unefa.png" por el nombre de tu imagen -->
+                        <img src="logo-unefa.png" alt="Escudo UNEFA" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="logo-respaldo" style="display:none;">LOGO<br>UNEFA</div>
+                    </div>
+                    <div class="membrete-texto">
+                        REPÚBLICA BOLIVARIANA DE VENEZUELA<br>
+                        MINISTERIO DEL PODER POPULAR PARA LA DEFENSA<br>
+                        UNIVERSIDAD NACIONAL EXPERIMENTAL POLITÉCNICA DE LA<br>
+                        FUERZA ARMADA NACIONAL BOLIVARIANA<br>
+                        UNEFA – NÚCLEO GUÁRICO<br>
+                        INGENIERÍA DE SISTEMAS
+                    </div>
+                </div>
+                <div class="linea-vinotinto"></div>
+            </div>
+
+            <!-- Centro: Título Principal -->
+            <div class="centro-portada">
+                <div class="etiqueta-tipo">INFORME TÉCNICO</div>
+                <h1 class="titulo-principal">PROTOCOLO IPv4</h1>
+                <div class="subtitulo-principal">(DIRECCIONAMIENTO Y ENRUTAMIENTO EN REDES)</div>
+            </div>
+
+            <!-- Parte Inferior: Profesor y Bachiller -->
+            <div class="pie-portada">
+                <div class="linea-dorada"></div>
+                <div class="datos-inferiores">
+                    <div class="bloque-izquierdo">
+                        <span class="etiqueta-dato">PROFESOR:</span>
+                        <span class="nombre-dato">Raúl Blanco</span>
+                    </div>
+                    <div class="bloque-derecho">
+                        <span class="etiqueta-dato">BACHILLER:</span>
+                        <span class="nombre-dato">Luigui Lara</span>
+                        <span class="cedula-dato">V-29.945.875</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- PÁGINA 2: DESARROLLO CLARO Y PRECISO -->
+    <div class="pagina">
+        <h2 class="titulo-seccion">1. ¿QUÉ ES EL PROTOCOLO IPv4?</h2>
+        <p>
+            El <strong>Protocolo de Internet versión 4 (IPv4)</strong> es el sistema principal encargado de identificar cada dispositivo conectado a una red y guiar los paquetes de datos desde un origen hasta un destino. Funciona como un "sistema postal digital": asigna una dirección única (dirección IP) a cada equipo para que la información sepa exactamente a dónde llegar.
+        </p>
+        <p>
+            Opera en la <strong>Capa de Red (Capa 3)</strong> del modelo OSI y se caracteriza por ser un protocolo <em>sin conexión</em> y de <em>mejor esfuerzo</em> (best-effort), lo que significa que envía los paquetes de forma independiente buscando la ruta más rápida, dejando la verificación de errores a protocolos superiores como TCP.
+        </p>
+
+        <h2 class="titulo-seccion">2. ESTRUCTURA DE UNA DIRECCIÓN IPv4</h2>
+        <p>
+            Una dirección IPv4 está compuesta por <strong>32 bits</strong> divididos en cuatro bloques de 8 bits llamados <strong>octetos</strong>. Para que sea fácil de leer, se escribe en formato decimal separado por puntos, donde cada número va del <strong>0 al 255</strong> (ejemplo: <code>192.168.1.10</code>).
+        </p>
+        <ul class="lista-formal">
+            <li><strong>Porción de Red:</strong> Identifica la red específica a la que pertenece el dispositivo (similar al nombre de una calle).</li>
+            <li><strong>Porción de Host:</strong> Identifica al dispositivo exacto dentro de esa red (similar al número de casa).</li>
+            <li><strong>Máscara de Subred:</strong> Indica qué parte de la dirección IP corresponde a la red y qué parte al dispositivo (ejemplo: <code>255.255.255.0</code>).</li>
+        </ul>
+
+        <h2 class="titulo-seccion">3. CLASES DE DIRECCIONES IPv4</h2>
+        <p>
+            Tradicionalmente, las direcciones IPv4 se organizan en cinco clases según el tamaño de la red y su propósito:
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Clase</th>
+                    <th>Rango 1er Octeto</th>
+                    <th>Máscara por Defecto</th>
+                    <th>Uso Principal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Clase A</strong></td>
+                    <td>1 – 126</td>
+                    <td>255.0.0.0 (/8)</td>
+                    <td>Redes gigantescas (Proveedores de Internet)</td>
+                </tr>
+                <tr>
+                    <td><strong>Clase B</strong></td>
+                    <td>128 – 191</td>
+                    <td>255.255.0.0 (/16)</td>
+                    <td>Redes medianas y grandes (Universidades, empresas)</td>
+                </tr>
+                <tr>
+                    <td><strong>Clase C</strong></td>
+                    <td>192 – 223</td>
+                    <td>255.255.255.0 (/24)</td>
+                    <td>Redes pequeñas (Hogares, oficinas, locales)</td>
+                </tr>
+                <tr>
+                    <td><strong>Clase D</strong></td>
+                    <td>224 – 239</td>
+                    <td>No aplica</td>
+                    <td>Multicast (transmisión simultánea a grupos)</td>
+                </tr>
+                <tr>
+                    <td><strong>Clase E</strong></td>
+                    <td>240 – 255</td>
+                    <td>No aplica</td>
+                    <td>Investigación y pruebas experimentales</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- PÁGINA 3: CONTINUACIÓN DEL DESARROLLO -->
+    <div class="pagina">
+        <h2 class="titulo-seccion">4. DIRECCIONES PÚBLICAS VS. PRIVADAS</h2>
+        <p>
+            No todas las direcciones IP tienen el mismo alcance. Para aprovechar mejor los recursos, se dividen en dos tipos fundamentales:
+        </p>
+        <ul class="lista-formal">
+            <li><strong>IP Públicas:</strong> Son únicas en todo el mundo y permiten navegar directamente en Internet. Las asignan los proveedores de servicios (ISP).</li>
+            <li><strong>IP Privadas:</strong> Se usan únicamente dentro de redes internas (casas, laboratorios, empresas) y no son visibles directamente en Internet. Sus rangos reservados son:
+                <ul>
+                    <li><code>10.0.0.0</code> a <code>10.255.255.255</code> (Clase A)</li>
+                    <li><code>172.16.0.0</code> a <code>172.31.255.255</code> (Clase B)</li>
+                    <li><code>192.168.0.0</code> a <code>192.168.255.255</code> (Clase C)</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2 class="titulo-seccion">5. PARTES DEL PAQUETE (ENCABEZADO IPv4)</h2>
+        <p>
+            Cada vez que se envía información, IPv4 le coloca una etiqueta inicial llamada <strong>encabezado</strong> (mínimo 20 bytes) que contiene los datos esenciales para el viaje:
+        </p>
+        <ul class="lista-formal">
+            <li><strong>Versión:</strong> Indica que es versión 4 (en binario <code>0100</code>).</li>
+            <li><strong>TTL (Tiempo de Vida):</strong> Evita que un paquete quede dando vueltas infinitamente si hay un error en la red; cada router que cruza le resta 1 hasta llegar a cero.</li>
+            <li><strong>Protocolo:</strong> Señala qué tipo de datos van dentro (por ejemplo: 6 para TCP, 17 para UDP).</li>
+            <li><strong>IP Origen e IP Destino:</strong> Las direcciones de 32 bits de quién envía y quién recibe.</li>
+        </ul>
+
+        <h2 class="titulo-seccion">6. AGOTAMIENTO Y SOLUCIONES ACTUALES</h2>
+        <p>
+            Como IPv4 usa 32 bits, solo existen aproximadamente <strong>4.294 millones</strong> de direcciones posibles. Debido al crecimiento masivo de teléfonos, computadoras y dispositivos inteligentes, estas direcciones se agotaron. Para resolverlo se aplican tres soluciones clave:
+        </p>
+        <ul class="lista-formal">
+            <li><strong>NAT (Traducción de Direcciones de Red):</strong> Permite que decenas de dispositivos con IP privadas en una casa u oficina salgan a Internet compartiendo una sola IP pública.</li>
+            <li><strong>Subnetting y CIDR:</strong> Divide redes grandes en subredes más pequeñas y exactas para no desperdiciar direcciones.</li>
+            <li><strong>IPv6:</strong> Es el sucesor moderno de 128 bits, capaz de ofrecer una cantidad prácticamente ilimitada de direcciones.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
